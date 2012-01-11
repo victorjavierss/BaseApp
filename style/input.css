@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+input[type=password],
+input[type=text]{border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;box-shadow:0 1px 2px #ddd;-moz-box-shadow:0 1px 2px #ddd;-webkit-box-shadow:0 1px 2px #ddd;border:1px solid #aaa;color:#555555;padding:4px;margin:6px;}
+input[type=submit],button,input[type=reset],input[type=button]{font-weight:bold;border: 1px solid #aaa;padding: 3px 7px;color: #111;text-decoration: none;background: #ddd;border-radius: 12px;-webkit-border-radius: 12px;-moz-border-radius: 12px;text-shadow: 0px 1px 0px #fff;background: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#cccccc));background:-moz-linear-gradient(top,#ffffff,#cccccc);background:-o-linear-gradient(top,#ffffff,#cccccc);}
+input[type=submit]:hover,button:hover,input[type=reset]:hover,input[type=button]:hover{background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#dddddd));background: -moz-linear-gradient(top, #cccccc, #dddddd);background: -o-linear-gradient(top, #cccccc, #dddddd);cursor:pointer;}
+input[type=submit].clicked,button.clicked,input[type=reset].clicked,input[type=button].clicked{background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#cccccc));background: -moz-linear-gradient(top, #dddddd, #cccccc);background: -o-linear-gradient(top, #dddddd, #cccccc);cursor:pointer;}

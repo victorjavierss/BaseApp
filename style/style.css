@@ -1,0 +1,5 @@
+@CHARSET "UTF-8";
+*{position:relative;}
+body,p,h1,h2,h3,h4,h5{margin: 0;font-family: helvetica,arial,serif;}
+img, div { behavior: url(style/iepngfix.htc); }
+#main-content{width:760px;height:600px;}
