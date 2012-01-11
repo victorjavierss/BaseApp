@@ -45,7 +45,6 @@ if(count($get)>2){
 	}
 }
 
-
 $response   = isset($_GET['response']) ? $_GET['response'] : 'html';
 
 $controller = ucfirst(strtolower($controller));
