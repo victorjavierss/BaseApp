@@ -16,7 +16,7 @@ class DbAdapter{
 		if( ! isset( self::$_db[$section]) ){
 			$iniFile = APP_HOME . DIRECTORY_SEPARATOR . 'config' 
 								 . DIRECTORY_SEPARATOR . 'db.ini';
-			$config = new Zend_Config_Ini($iniFile,$section,array('nestSeparator' => ':'));
+			$config = new Zend_Config_Ini($iniFile,$section);
 			self::$_db[$section] = Zend_Db::factory($config->database);
 		}else{
 			#Ya existe una instancia de $section

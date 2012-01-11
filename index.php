@@ -29,7 +29,7 @@ require_once 'funciones.php';
 
 $requestUri = $_SERVER['REQUEST_URI'];
 $requestScript = str_replace('index.php',NULL,$_SERVER['SCRIPT_NAME']);
-
+$get = str_replace($requestScript, NULL, $requestUri);
 $get = explode('?',$get);
 $get = $get[0];
 $get = explode("/",$get);
@@ -76,6 +76,6 @@ is_ajax() && $response == 'json' && header('Content-type: application/json');
 if( !is_ajax() && $response == 'html' ){
 	$content  = 'content';
 	$$content = ob_get_clean();		
-	$path_file = APP_HOME . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . "layout.phtml";
+	$path_file = APP_HOME . DIRECTORY_SEPARATOR . 'mods' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR  . "layout.phtml";
 	include_once($path_file);
 }

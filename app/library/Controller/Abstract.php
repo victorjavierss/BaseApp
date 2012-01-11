@@ -13,7 +13,7 @@ abstract class Controller_Abstract{
 		$arguments = func_get_args();
 		array_shift ($arguments);
 		call_user_func_array(array($this, $action.'Action'), $arguments);
-		$path_file = APP_HOME . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . "{$this->_controller}-{$action}.phtml";
+		$path_file = APP_HOME . DIRECTORY_SEPARATOR . 'mods' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . "{$this->_controller}-{$action}.phtml";
 
 		if (false === file_exists($path_file) ){
 						
