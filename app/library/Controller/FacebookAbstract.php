@@ -3,12 +3,14 @@ abstract class Controller_FacebookAbstract extends Controller_Abstract{
 	protected $_controller    = 'FacebookAbstract';
 	protected $_facebook      = null;
 	protected $_facebook_user = null;
+	
 	public function __construct(){
 		parent::__construct();
+		
 		$facebook_config = APP_HOME . DIRECTORY_SEPARATOR . 'config'.DIRECTORY_SEPARATOR.'config.ini';
 		$facebook_config = parse_ini_file($facebook_config, TRUE);
 		$facebook_config = $facebook_config['facebook'];
-		
+
 		$this->_facebook = new Facebook(array(
 		      'appId' => $facebook_config['app_id']
 		     ,'secret' => $facebook_config['secret']

@@ -1,16 +1,41 @@
 <?php
+
+$iniFile = APP_HOME . DIRECTORY_SEPARATOR . 'config' 
+					. DIRECTORY_SEPARATOR . 'config.ini';
+
+$config = new Zend_Config_Ini($iniFile,'general');
+
+$js_include = array();
+$js_capture = FALSE;
+$title      = $config->title;
+$head      = array();
+
 function is_ajax(){	
 	return (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')?true:false; 
 }
 
-$js_include = array();
-$js_capture = FALSE;
-$title      = 'Titulo';
+function head_capture(){
+	ob_start();
+}
 
-function js_include($js_script_file){
+function head_end_capture(){
+	global $head;
+	$head[] = str_replace(array('\n','\t'), null, ob_get_clean()) ;
+}
+
+function head_print(){
+	global $head;
+	echo implode(NULL, $head);;
+}
+
+function js_include($js_script_file, $prepend = FALSE){
 	global $js_include;
 	if(!in_array($js_script_file, $js_include)){
-		$js_include [] = $js_script_file; 
+		if($prepend){
+			$js_include = array_merge(array($js_script_file),$js_include);
+		}else{
+			$js_include [] = $js_script_file;
+		}
 	}
 }
 
