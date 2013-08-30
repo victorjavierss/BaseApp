@@ -6,8 +6,10 @@ abstract class Controller_Facebook_CanvasAbstract extends Controller_FacebookAbs
 
 	protected function _AuthAction(){
 		ob_get_clean();
-		$this->_loadFbJsSdk();
-		js_print();
+		$redirection = $this->_facebook->getLoginUrl( array( 'scope'=> $this->_additionalPerms ) );
+		echo "<script type='text/javascript'>
+			top.location.href = '{$redirection}';
+			</script>";
 		exit();
 	}
 }
