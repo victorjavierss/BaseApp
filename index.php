@@ -8,6 +8,7 @@ $protocol = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' :
 $url =  "{$protocol}://{$_SERVER["HTTP_HOST"]}$uri";
 
 define('URL', $url);
+define('DOMAIN', $_SERVER["HTTP_HOST"]);
 define('APP_HOME',dirname(__FILE__) . DIRECTORY_SEPARATOR . 'app');
 
 $include_path  =  APP_HOME . DIRECTORY_SEPARATOR . 'library'
